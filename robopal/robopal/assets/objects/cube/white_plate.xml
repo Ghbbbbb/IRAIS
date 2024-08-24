@@ -1,0 +1,15 @@
+<mujoco model="white_plate">
+  <asset>
+    <!-- Plate geometry -->
+    <mesh name="white_plate" file="objects/cube/1.obj" scale="0.008 0.008 0.008"/> 
+    <!-- Plate material -->
+    <material name="white_plate_material" rgba="1 1 1 1"/>
+  </asset>
+  <worldbody>
+    <!-- Plate body -->
+    <body name="white_plate" pos="0.5 0 0.415">
+      <geom name="white_plate_visual" mesh="white_plate" material="white_plate_material" euler="0 0 0" type="mesh" conaffinity="0" contype="0" group="1"/>
+      <geom name="white_plate_collision" mesh="white_plate" euler="0 0 0" type="mesh" conaffinity="1" contype="1" group="4"/>
+    </body>
+  </worldbody>
+</mujoco>
