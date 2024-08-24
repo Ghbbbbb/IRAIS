@@ -27,7 +27,7 @@ python server_abb.py [--write *** --doc --voice]
 python client_retrieval_gpt_abb.py [--debug --doc --voice --prompt ***]
 ```
 
-The prediction file will be dumped in the output/ folder if `--write ***` has been store.
+The prediction file will be dumped in the output/ folder if `--write ***` has been set.
 
 ## Evaluation
 
