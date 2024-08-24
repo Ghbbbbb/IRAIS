@@ -1,0 +1,16 @@
+colorama==0.4.6
+gymnasium==0.29.1
+langchain==0.2.14
+langchain_community==0.2.12
+langchain_openai==0.1.22
+matplotlib==3.9.2
+mss==9.0.1
+mujoco==3.1.4
+numpy==2.1.0
+opencv_contrib_python==4.9.0.80
+opencv_python==4.9.0.80
+pinecone==5.0.1
+PyGetWindow==0.0.9
+pyttsx3==2.90
+pywin32==306
+torch==2.0.0+cu118
