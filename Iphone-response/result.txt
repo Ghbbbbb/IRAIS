@@ -1,0 +1,29 @@
+question: 你知道光的传播速度是多少呢？
+result: ```python
+pri.say('光在真空中的传播速度是每秒299,792,458米。')
+```
+
+question: 你知道英超联赛成立，于哪一年吗？
+result: ```python
+pri.say('英超联赛成立于1992年')```
+
+question: 请你将机械臂向前运动，15厘米，在向上运动5厘米，最后向后运动20厘米。
+result: ```python
+# move the gripper 15cm forward
+pri.move_gripper_orientation('forward', 0.15)
+# move the gripper 5cm upward
+pri.move_gripper_orientation('upward', 0.05)
+# move the gripper 20cm backward
+pri.move_gripper_orientation('backward', 0.2)
+```
+
+question: 请你将绿色的方块放到牛奶颜色的杯子里，再将红色方块，堆叠到蓝色方块上面。
+result: ```python
+# 放置绿色方块到牛奶颜色的杯子上，这里牛奶颜色代表白色杯子
+pri.stack_object_on_object('green_block', 'white_mug')
+# 将红色方块堆叠到蓝色方块上面
+pri.stack_object_on_object('red_block', 'blue_block')
+# 任务完成后重置机器人到初始位置
+pri.reset_robot()
+```
+

@@ -206,7 +206,7 @@ def main(WRITE="gpt3.5_dcpd1-1", IS_DOC=False, IS_VOICE=False):
                             # 定义停止事件
                             stop_event = threading.Event()
                             # 定义录制线程
-                            video_filename = f"iphone_video/window_video_{i}.avi"
+                            video_filename = f"Iphone-video/window_video_{i}.avi"
                             record_thread = threading.Thread(target=record_window, args=("MuJoCo : empty_floor", video_filename, stop_event))
                             IS_VOICE and text_to_speech("收到，现在开始执行任务！")
                             # 开始录制视频

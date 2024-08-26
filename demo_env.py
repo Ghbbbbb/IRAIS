@@ -2,7 +2,7 @@ import numpy as np
 import time
 
 from robopal.envs import RobotEnv
-from robopal.robots.diana_med import DianaGraspMultiObjs,DianaGraspMultiObjs_Partobservable,DianaGrasp_kh,DianaGrasp_am
+from robopal.robots.diana_med import DianaGraspMultiObjs
 
 def primitive(func, checker=None):
     """ primitive flag, no practical effect. """
@@ -15,7 +15,6 @@ def primitive(func, checker=None):
 
 class GraspingEnv(RobotEnv):
     def __init__(self,
-                 IS_ENV2=False,
                  render_mode='human',
                  control_freq=100,
                  enable_camera_viewer=False,
@@ -23,10 +22,8 @@ class GraspingEnv(RobotEnv):
                  is_interpolate=False,
                 #  camera_name='cam'
                  ):
-        if IS_ENV2:
-            robot = DianaGraspMultiObjs_Partobservable()
-        else:
-            robot = DianaGraspMultiObjs()
+
+        robot = DianaGraspMultiObjs()
         super().__init__(
             robot=robot,
             render_mode=render_mode,
@@ -60,7 +57,6 @@ class GraspingEnv(RobotEnv):
             error2 = 2*np.sum(np.abs(state[:3] - current_pos)) + np.sum(np.abs(state[3:] - current_quat)/2.5)        #跑仿真效果时用
             end_time = time.time()
             elapsed_time  = end_time - start_time
-            # print("time:",elapsed_time)
             if error2 <= 0.05 or elapsed_time  > 30:
                 return True
             return False

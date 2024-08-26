@@ -22,8 +22,8 @@ class GPTAssistant:
 
         logging.info("Initialize LLM...")
         llm = ChatOpenAI(
-            openai_api_base="https://api.gpts.vin/v1", #
-            model="gpt-3.5-turbo-0613",
+            openai_api_base="https://api.gpts.vin/v1", #中转
+            model="gpt-4-turbo",
             temperature=0,
             max_tokens=2048,
         )
@@ -70,7 +70,7 @@ class VoiceCommandHandler(FileSystemEventHandler):
                     self.socket.sendall(result.encode())
                     print('\033[31m'"question:", command)
                     print('\033[32m'"result:", result, '\n')
-                    file_path = os.path.join('iphone_response', "result.txt")
+                    file_path = os.path.join('Iphone-response', "result.txt")
                     with open(file_path, "a", encoding="utf-8") as file:
                         file.write("question: " + command + "\n")
                         file.write("result: " + result + "\n\n")
@@ -97,7 +97,7 @@ def main(IS_DEBUG=False, IS_DOC=False, IS_VOICE=False, PROMPT_DOC = "dcpd1_base"
         s = None
 
     if IS_VOICE:
-        path = "iphone_voice"  # 监控文件夹
+        path = "Iphone-voice"  # 监控文件夹
         event_handler = VoiceCommandHandler(gpt, s)
         observer = Observer()
         observer.schedule(event_handler, path, recursive=False)
